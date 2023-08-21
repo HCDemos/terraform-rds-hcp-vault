@@ -36,7 +36,7 @@ resource "vault_database_secrets_mount" "db" {
 
 resource "vault_database_secret_backend_role" "readOnly" {
   name    = "readOnly"
-  default_ttl = 900
+  default_ttl = 950
   max_ttl = 2700
   backend = vault_database_secrets_mount.db.path
   db_name = vault_database_secrets_mount.db.postgresql[0].name
