@@ -153,7 +153,7 @@ resource "aws_security_group" "rds" {
 
 resource "aws_db_parameter_group" "dap-education" {
   name   = "dap-education"
-  family = "postgres13"
+  family = "postgres16"
 
   parameter {
     name  = "log_connections"
