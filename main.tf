@@ -26,7 +26,7 @@ resource "vault_database_secrets_mount" "db" {
     password      = var.db_password
     #host       = aws_db_instance.education.address
     #port          = aws_db_instance.education.port
-    connection_url    = "postgresql://{{username}}:{{password}}@${aws_db_instance.dap-education.address}:${aws_db_instance.dap-education.port}/postgres?sslmode=disable"
+    connection_url    = "postgresql://{{username}}:{{password}}@${aws_db_instance.dap-education.address}:${aws_db_instance.dap-education.port}/postgres"
     verify_connection = true
     allowed_roles = [
       "dev2","readWrite","readOnly"
