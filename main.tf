@@ -148,6 +148,10 @@ resource "aws_db_parameter_group" "dap-education" {
     name  = "log_connections"
     value = "1"
   }
+  parameter {
+    name  = "rds.force_ssl"
+    value = "0" # "1" enforces SSL, "0" disables enforcement
+  }
   tags = {
     name = "dap-rdsdbparameters"
     owner = var.prefix
@@ -172,4 +176,5 @@ resource "aws_db_instance" "dap-education" {
   parameter_group_name   = aws_db_parameter_group.dap-education.name
   publicly_accessible    = true
   skip_final_snapshot    = true
+
 }
