@@ -1,7 +1,3 @@
-provider "aws" {
-  region = "us-west-2"
-}
-
 list "aws_db_instance" "rds" {
   provider         = aws
   include_resource = true
